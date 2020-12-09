@@ -14,7 +14,7 @@ print('Views:', yt_obj.views)
 print('Description:', yt_obj.description)
 
 #Length of video 
-print('Length in seconds:', yt_obj.length)
+print('Length(in seconds):', yt_obj.length)
 
 #Rating
 print('Rating:', int(yt_obj.rating))
@@ -22,12 +22,15 @@ print('Rating:', int(yt_obj.rating))
 #Link
 print('Link:', link)
 
-
 download_request = input('do you want to download the video? [Y/N]')
 
+#Download the video 
 if download_request == "Y":
+
 	video_download = yt_obj.streams.get_highest_resolution()
-	video_download.download()
+	video_download.download() #add location inside download to save to a different location
+
 else:
-	print("okay")
+	print("oh, okay.")
+
 
